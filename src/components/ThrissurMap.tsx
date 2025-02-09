@@ -19,10 +19,10 @@ const ThrissurMap = () => {
       center: [76.2144, 10.5276], // Thrissur coordinates
       zoom: 0,
       pitch: 0,
-      maxBounds: [
-        [75.9144, 10.2276], // Southwest coordinates
-        [76.5144, 10.8276]  // Northeast coordinates
-      ]
+      // maxBounds: [
+      //   [75.9144, 10.2276], // Southwest coordinates
+      //   [76.5144, 10.8276]  // Northeast coordinates
+      // ]
     });
 
     // Add navigation controls
