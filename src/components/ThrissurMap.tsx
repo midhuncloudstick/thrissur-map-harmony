@@ -11,7 +11,7 @@ const ThrissurMap = () => {
     if (!mapContainer.current) return;
 
     // Initialize map
-    mapboxgl.accessToken = 'YOUR_MAPBOX_TOKEN'; // Replace with your Mapbox token
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYXN3aW5jbG91ZGhvdXNlIiwiYSI6ImNtNm9kbjBjdjB0ZGkya29pdW1iNnRtZjIifQ.Kajty1beKSWA3dSGqbC4RQ'; // Replace with your Mapbox token
     
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
