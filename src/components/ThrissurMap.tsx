@@ -37,12 +37,13 @@ const ThrissurMap = () => {
         type: 'geojson',
         data: {
           type: 'Feature',
-          properties: {}, // Added the required empty properties object
           geometry: {
             type: 'Polygon',
             coordinates: [[
               [76.0744, 10.3276],
-         
+              [76.3544, 10.3276],
+              [76.3544, 10.7276],
+              [76.0744, 10.7276],
               [76.0744, 10.3276]
             ]]
           }
@@ -84,4 +85,3 @@ const ThrissurMap = () => {
 };
 
 export default ThrissurMap;
-
