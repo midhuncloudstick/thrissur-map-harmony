@@ -17,7 +17,7 @@ const ThrissurMap = () => {
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/light-v11',
       center: [76.2144, 10.5276], // Thrissur coordinates
-      zoom: 5,
+      zoom: 1,
       pitch: 0,
       maxBounds: [
         [75.9144, 10.2276], // Southwest coordinates
