@@ -19,6 +19,10 @@ const ThrissurMap = () => {
       center: [76.2144, 10.5276], // Thrissur coordinates
       zoom: 10,
       pitch: 0,
+      maxBounds: [
+        [75.9144, 10.2276], // Southwest coordinates
+        [76.5144, 10.8276]  // Northeast coordinates
+      ]
     });
 
     // Add navigation controls
@@ -26,6 +30,46 @@ const ThrissurMap = () => {
       new mapboxgl.NavigationControl(),
       'top-right'
     );
+
+    // Add Thrissur district boundary
+    map.current.on('load', () => {
+      map.current?.addSource('thrissur-boundary', {
+        type: 'geojson',
+        data: {
+          type: 'Feature',
+          geometry: {
+            type: 'Polygon',
+            coordinates: [[
+              [76.0744, 10.3276],
+              [76.3544, 10.3276],
+              [76.3544, 10.7276],
+              [76.0744, 10.7276],
+              [76.0744, 10.3276]
+            ]]
+          }
+        }
+      });
+
+      map.current?.addLayer({
+        id: 'thrissur-fill',
+        type: 'fill',
+        source: 'thrissur-boundary',
+        paint: {
+          'fill-color': '#F2FCE2', // Soft green background
+          'fill-opacity': 0.4
+        }
+      });
+
+      map.current?.addLayer({
+        id: 'thrissur-border',
+        type: 'line',
+        source: 'thrissur-boundary',
+        paint: {
+          'line-color': '#7E69AB',
+          'line-width': 2
+        }
+      });
+    });
 
     // Cleanup
     return () => {
